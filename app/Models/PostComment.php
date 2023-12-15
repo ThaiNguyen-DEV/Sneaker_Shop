@@ -12,11 +12,11 @@ class PostComment extends Model
         return $this->hasOne('App\Models\User','id','user_id');
     }
     public static function getAllComments(){
-        return PostComment::with('user_info')->paginate(10);
+        return PostComment::with('user_info')->paginate(9);
     }
 
     public static function getAllUserComments(){
-        return PostComment::where('user_id',auth()->user()->id)->with('user_info')->paginate(10);
+        return PostComment::where('user_id',auth()->user()->id)->with('user_info')->paginate(9);
     }
 
     public function post(){

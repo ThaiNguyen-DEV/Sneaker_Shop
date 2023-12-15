@@ -24,13 +24,13 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Họ tên</th>
+              <th>Họ Name</th>
               <th>Email</th>
               <th>Hình ảnh</th>
               <th>Thời gian truy cập</th>
               <th>Quyền</th>
-              <th>Trạng thái</th>
-              <th>Tùy chọn</th>
+              <th>Status</th>
+              <th>Option</th>
             </tr>
           </thead>
 

@@ -20,7 +20,7 @@ class Post extends Model
         return $this->hasOne('App\Models\User','id','added_by');
     }
     public static function getAllPost(){
-        return Post::with(['cat_info','author_info'])->orderBy('id','DESC')->paginate(10);
+        return Post::with(['cat_info','author_info'])->orderBy('id','DESC')->paginate(9);
     }
     // public function get_comments(){
     //     return $this->hasMany('App\Models\PostComment','post_id','id');
@@ -40,7 +40,7 @@ class Post extends Model
     // public static function getProductByCat($slug){
     //     // dd($slug);
     //     return Category::with('products')->where('slug',$slug)->first();
-    //     // return Product::where('cat_id',$id)->where('child_cat_id',null)->paginate(10);
+    //     // return Product::where('cat_id',$id)->where('child_cat_id',null)->paginate(9);
     // }
 
     // public static function getBlogByCategory($id){

@@ -9,7 +9,7 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách đánh giá của bạn</h6>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách Your Review</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -19,12 +19,12 @@
             <tr>
               <th>Id</th>
               <th>Tài khoản</th>
-              <th>Tên sản phẩm</th>
+              <th>Name sản phẩm</th>
               <th>Nhận xét</th>
               <th>Rate</th>
               <th>Ngày lập</th>
-              <th>Trạng thái</th>
-              <th>Tùy chọn</th>
+              <th>Status</th>
+              <th>Option</th>
             </tr>
           </thead>
           <tbody>

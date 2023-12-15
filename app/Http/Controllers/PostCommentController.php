@@ -56,7 +56,7 @@ class PostCommentController extends Controller
         ];
         Notification::send($user, new StatusNotification($details));
         if($status){
-            request()->session()->flash('success','Cảm ơn bình luận của bạn');
+            request()->session()->flash('success','Cảm ơn Your Comment');
         }
         else{
             request()->session()->flash('error','Đã xảy ra lỗi khi lưu dữ liệu');

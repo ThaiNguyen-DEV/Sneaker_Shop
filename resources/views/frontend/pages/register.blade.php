@@ -51,28 +51,28 @@
                     @csrf
                     <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
                         <span class="label-input100">Full Name</span>
-                        <input class="input100" type="text" name="name" value="{{old('name')}}" placeholder="Nhập họ tên">
+                        <input class="input100" type="text" name="name" value="{{old('name')}}" placeholder="Enter Full Name">
                         @error('name')
                         <span class="focus-input100" data-symbol="&#xf206;">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
                         <span class="label-input100">Email</span>
-                        <input class="input100" type="text" name="email" value="{{old('email')}}" placeholder="Nhập email của bạn">
+                        <input class="input100" type="text" name="email" value="{{old('email')}}" placeholder="Enter Email">
                         @error('email')
                         <span class="focus-input100" data-symbol="&#xf206;">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
                         <span class="label-input100">Password</span>
-                        <input class="input100" type="password" name="password" value="{{old('password')}}" placeholder="Nhập mật khẩu của bạn">
+                        <input class="input100" type="password" name="password" value="{{old('password')}}" placeholder="Enter Password">
                         @error('password')
                         <span class="focus-input100" data-symbol="&#xf190;">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
                         <span class="label-input100">Repeat Password</span>
-                        <input class="input100" type="password" name="password_confirmation" value="{{old('password_confirmation')}}" placeholder="Nhập lại mật khẩu">
+                        <input class="input100" type="password" name="password_confirmation" value="{{old('password_confirmation')}}" placeholder="Repeat Password">
                         @error('password_confirmation')
                         <span class="focus-input100" data-symbol="&#xf190;">{{$message}}</span>
                         @enderror

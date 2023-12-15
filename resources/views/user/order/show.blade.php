@@ -4,7 +4,7 @@
 
 @section('main-content')
 <div class="card">
-<h5 class="card-header">Đơn hàng của bạn       <a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
+<h5 class="card-header">Order của bạn       <a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
   </h5>
   <div class="card-body">
     @if($order)
@@ -12,14 +12,14 @@
       <thead>
         <tr>
             <th>Id</th>
-            <th>Mã hóa đơn</th>
-            <th>Họ tên</th>
+            <th>Invoice Code</th>
+            <th>Họ Name</th>
             <th>Email</th>
-            <th>Số lượng</th>
+            <th>Quantity</th>
             <th>Phí vận chuyển</th>
-            <th>Tổng thanh toán</th>
-            <th>Trạng thái</th>
-            <th>Tùy chọn</th>
+            <th>Tổng Payment</th>
+            <th>Status</th>
+            <th>Option</th>
         </tr>
       </thead>
       <tbody>
@@ -59,10 +59,10 @@
         <div class="row">
           <div class="col-lg-6 col-lx-4">
             <div class="order-info">
-              <h4 class="text-center pb-4">Thông tin đơn hàng</h4>
+              <h4 class="text-center pb-4">Thông tin Order</h4>
               <table class="table">
                     <tr class="">
-                        <td>Mã hóa đơn</td>
+                        <td>Invoice Code</td>
                         <td> : {{$order->order_number}}</td>
                     </tr>
                     <tr>
@@ -70,11 +70,11 @@
                         <td> : {{$order->created_at->format('D d M, Y')}} at {{$order->created_at->format('g : i a')}} </td>
                     </tr>
                     <tr>
-                        <td>Số lượng</td>
+                        <td>Quantity</td>
                         <td> : {{$order->quantity}}</td>
                     </tr>
                     <tr>
-                        <td>Trạng thái</td>
+                        <td>Status</td>
                         <td> : {{$order->status}}</td>
                     </tr>
                     <tr>
@@ -85,15 +85,15 @@
                         <td> :{{number_format($order->shipping->price),2}}$</td>
                     </tr>
                     <tr>
-                        <td>Tổng thanh toán</td>
+                        <td>Tổng Payment</td>
                         <td> :{{number_format($order->total_amount,2)}}$</td>
                     </tr>
                     <tr>
-                      <td>Loại thanh toán</td>
+                      <td>Loại Payment</td>
                       <td> : @if($order->payment_method=='cod') Cash on Delivery @else Paypal @endif</td>
                     </tr>
                     <tr>
-                        <td>Trạng thái thanh toán</td>
+                        <td>Status Payment</td>
                         <td> : {{$order->payment_status}}</td>
                     </tr>
               </table>
@@ -105,7 +105,7 @@
               <h4 class="text-center pb-4">Địa chỉ nhận hàng</h4>
               <table class="table">
                     <tr class="">
-                        <td>Họ tên</td>
+                        <td>Họ Name</td>
                         <td> : {{$order->first_name}} {{$order->last_name}}</td>
                     </tr>
                     <tr>

@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Thanh toán</h4>
+                        <h4>Payment</h4>
                         <div class="breadcrumb__links">
                             <a href="{{route('home')}}">Home</a>
                             <a href="{{route('product-grids')}}">Shop</a>
@@ -120,7 +120,7 @@
                                 <div class="checkout__input__checkbox">
                                     <label for="payment">
                                        Pay when receive order
-                                        <input type="checkbox" id="payment" name="payment_method" value="Thanh toán khi nhận hàng">
+                                        <input type="checkbox" id="payment" name="payment_method" value="Payment khi nhận hàng">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>

@@ -100,7 +100,7 @@ class FrontendController extends Controller
             $products=$products->where('status','active')->paginate($_GET['show']);
         }
         else{
-            $products=$products->where('status','active')->paginate(10);
+            $products=$products->where('status','active')->paginate(9);
         }
         // Sort by name , price, category
 
@@ -372,7 +372,7 @@ class FrontendController extends Controller
     public function logout(){
         Session::forget('user');
         Auth::logout();
-        request()->session()->flash('success','Đăng xuất thành công');
+        request()->session()->flash('success','Log out thành công');
         return back();
     }
 

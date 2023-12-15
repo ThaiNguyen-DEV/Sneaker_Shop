@@ -55,7 +55,7 @@ class HomeController extends Controller
 
     // Order
     public function orderIndex(){
-        $orders=Order::orderBy('id','DESC')->where('user_id',auth()->user()->id)->paginate(10);
+        $orders=Order::orderBy('id','DESC')->where('user_id',auth()->user()->id)->paginate(9);
         return view('user.order.index')->with('orders',$orders);
     }
     public function userOrderDelete($id)
@@ -68,7 +68,7 @@ class HomeController extends Controller
            else{
                 $status=$order->delete();
                 if($status){
-                    request()->session()->flash('success','Đã  hủy đơn hàng');
+                    request()->session()->flash('success','Đã  hủy Order');
                 }
                 else{
                     request()->session()->flash('error','Đã xảy ra lỗi khi lưu dữ liệu!');

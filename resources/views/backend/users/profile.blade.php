@@ -39,7 +39,7 @@
                 <form class="border px-4 pt-2 pb-3" method="POST" action="{{route('profile-update',$profile->id)}}">
                     @csrf
                     <div class="form-group">
-                        <label for="inputTitle" class="col-form-label">Họ tên</label>
+                        <label for="inputTitle" class="col-form-label">Họ Name</label>
                       <input id="inputTitle" type="text" name="name" placeholder="Enter name"  value="{{$profile->name}}" class="form-control">
                       @error('name')
                       <span class="text-danger">{{$message}}</span>

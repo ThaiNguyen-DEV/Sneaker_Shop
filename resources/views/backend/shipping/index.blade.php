@@ -26,7 +26,7 @@
             <tr>
               <th>Id</th>
               <th>Shipping Company</th>
-              <th>Shipping Fee</th>
+              <th>Shipping Fee ($)</th>
               <th>Status</th>
               <th>Option</th>
             </tr>

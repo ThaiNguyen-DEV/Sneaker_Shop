@@ -16,7 +16,7 @@
       <form method="post" action="{{route('users.store')}}">
         {{csrf_field()}}
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Họ tên</label>
+          <label for="inputTitle" class="col-form-label">Họ Name</label>
         <input id="inputTitle" type="text" name="name" placeholder="Enter name"  value="{{old('name')}}" class="form-control">
         @error('name')
         <span class="text-danger">{{$message}}</span>
@@ -70,7 +70,7 @@
           @enderror
           </div>
           <div class="form-group">
-            <label for="status" class="col-form-label">Trạng thái</label>
+            <label for="status" class="col-form-label">Status</label>
             <select name="status" class="form-control">
                 <option value="active">Active</option>
                 <option value="inactive">Inactive</option>

@@ -18,7 +18,7 @@
       <textarea name="review" id="" cols="20" rows="10" class="form-control">{{$review->review}}</textarea>
       </div>
       <div class="form-group">
-        <label for="status">Trạng thái :</label>
+        <label for="status">Status :</label>
         <select name="status" id="" class="form-control">
           <option value="">--Select Status--</option>
           <option value="active" {{(($review->status=='active')? 'selected' : '')}}>Active</option>

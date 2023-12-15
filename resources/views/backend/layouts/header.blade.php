@@ -76,7 +76,7 @@
           <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> {{ __('Đăng Xuất') }}
+                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> {{ __('Log out') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

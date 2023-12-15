@@ -22,7 +22,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders=Order::orderBy('id','DESC')->paginate(10);
+        $orders=Order::orderBy('id','DESC')->paginate(9);
         return view('backend.order.index')->with('orders',$orders);
     }
 
@@ -146,7 +146,7 @@ class OrderController extends Controller
         }
         Cart::where('user_id', auth()->user()->id)->where('order_id', null)->update(['order_id' => $order->id]);
 
-        // dd($users);        
+        // dd($users);
         request()->session()->flash('success','Đặt hàng thành công');
         return redirect()->route('home');
     }
@@ -221,7 +221,7 @@ class OrderController extends Controller
         if($order){
             $status=$order->delete();
             if($status){
-                request()->session()->flash('success','Đã hủy đơn hàng!');
+                request()->session()->flash('success','Đã hủy Order!');
             }
             else{
                 request()->session()->flash('error','Đã xảy ra lỗi !');
@@ -250,17 +250,17 @@ class OrderController extends Controller
             elseif($order->status=="process"){
                 request()->session()->flash('success','Your order is under processing please wait.');
                 return redirect()->route('home');
-    
+
             }
             elseif($order->status=="delivered"){
                 request()->session()->flash('success','Your order is successfully delivered.');
                 return redirect()->route('home');
-    
+
             }
             else{
                 request()->session()->flash('error','Your order canceled. please try again');
                 return redirect()->route('home');
-    
+
             }
         }
         else{

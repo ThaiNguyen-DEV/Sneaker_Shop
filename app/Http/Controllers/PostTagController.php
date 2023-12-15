@@ -14,7 +14,7 @@ class PostTagController extends Controller
      */
     public function index()
     {
-        $postTag=PostTag::orderBy('id','DESC')->paginate(10);
+        $postTag=PostTag::orderBy('id','DESC')->paginate(9);
         return view('backend.posttag.index')->with('postTags',$postTag);
     }
 

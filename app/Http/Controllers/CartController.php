@@ -67,7 +67,7 @@ class CartController extends Controller
             return back()->with('error','Sản phẩm này đã hết hàng!');
         }
         if ( ($request->quant[1] < 1) || empty($product) ) {
-            request()->session()->flash('error','Số lượng phải lớn hơn 1!');
+            request()->session()->flash('error','Quantity phải lớn hơn 1!');
             return back();
         }
 

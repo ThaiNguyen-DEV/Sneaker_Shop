@@ -5,14 +5,14 @@
     @include('user.layouts.notification')
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Bảng điều khiển</h1>
+      <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
     </div>
 
 
 
     <div class="row">
       @php
-          $orders=DB::table('orders')->where('user_id',auth()->user()->id)->paginate(10);
+          $orders=DB::table('orders')->where('user_id',auth()->user()->id)->paginate(9);
       @endphp
       <!-- Order -->
       <div class="col-xl-12 col-lg-12">
@@ -20,13 +20,13 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Mã hóa đơn</th>
-              <th>Tên</th>
+              <th>Invoice Code</th>
+              <th>Name</th>
               <th>Email</th>
-              <th>Số lượng</th>
-              <th>Tổng tiền</th>
-              <th>Trạng thái</th>
-              <th>Tùy chọn</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Option</th>
             </tr>
           </thead>
 
@@ -62,7 +62,7 @@
                 </tr>
               @endforeach
               @else
-                <td colspan="8" class="text-center"><h4 class="my-4">Bạn chưa có đơn hàng nào</h4></td>
+                <td colspan="8" class="text-center"><h4 class="my-4">Bạn chưa có Order nào</h4></td>
               @endif
           </tbody>
         </table>
