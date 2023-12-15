@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Đăng Nhập</title>
+    <title>Log in</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -46,7 +46,7 @@
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
                 <form class="login100-form validate-form" method="POST" action="{{ route('login.submit') }}">
                     <span class="login100-form-title p-b-49">
-                        Đăng nhập
+                        Log in
                     </span>
                     @csrf
                     <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
@@ -63,7 +63,7 @@
 
                     <div class="text-right p-t-8 p-b-31">
                         <a href="#">
-                            Quên mật khẩu?
+                            Forgot Password?
                         </a>
                     </div>
 
@@ -71,14 +71,14 @@
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
                             <button class="login100-form-btn" type="submit">
-                                Đăng nhập
+                                Login
                             </button>
                         </div>
                     </div>
 
                     <div class="txt1 text-center p-t-54 p-b-20">
                         <span>
-                            Đăng nhập với
+                            Login with
                         </span>
                     </div>
 
@@ -98,11 +98,11 @@
 
                     <div class="flex-col-c p-t-155">
                         <span class="txt1 p-b-17">
-                            Hoặc
+                            or
                         </span>
 
                         <a href="{{route('register.form')}}" class="txt2">
-                            Đăng ký
+                            Register
                         </a>
                     </div>
                 </form>

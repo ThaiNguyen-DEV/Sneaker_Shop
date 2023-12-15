@@ -68,10 +68,10 @@ class AdminController extends Controller
         // return $settings;
         $status=$settings->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Lưu dữ liệu thành công');
+            request()->session()->flash('success','Save Succesful');
         }
         else{
-            request()->session()->flash('error','Đã xảy ra lỗi khi lưu dữ liệu');
+            request()->session()->flash('error',Error);
         }
         return redirect()->route('admin');
     }

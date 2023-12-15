@@ -30,7 +30,7 @@ return new class extends Migration
             $table->timestamps();
         });
          DB::table('users')->insert([
-            'name'=>'Nguyễn Khánh TV',
+            'name'=>'Nguyen Dinh Duy Thai',
             'email'=>'admin@gmail.com',
             'password'=>Hash::make('123456'),
             'photo'=>'/storage/photos/1/Users/l3.jpg',

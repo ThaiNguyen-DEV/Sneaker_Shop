@@ -7,8 +7,8 @@
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-left">
             <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('post-tag.index') }}">Thẻ</a></li>
-            <li class="breadcrumb-item active">Cập nhật</li>
+            <li class="breadcrumb-item"><a href="{{ route('post-tag.index') }}">Tag</a></li>
+            <li class="breadcrumb-item active">Update</li>
         </ol>
     </div>
     </div>
@@ -17,7 +17,7 @@
         @csrf
         @method('PATCH')
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Tiêu đề</label>
+          <label for="inputTitle" class="col-form-label">Title</label>
           <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{$postTag->title}}" class="form-control">
           @error('title')
           <span class="text-danger">{{$message}}</span>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-          <label for="status" class="col-form-label">Trạng thái</label>
+          <label for="status" class="col-form-label">Status</label>
           <select name="status" class="form-control">
             <option value="active" {{(($postTag->status=='active') ? 'selected' : '')}}>Active</option>
             <option value="inactive" {{(($postTag->status=='inactive') ? 'selected' : '')}}>Inactive</option>
@@ -35,7 +35,7 @@
           @enderror
         </div>
         <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Cập nhật</button>
+           <button class="btn btn-success" type="submit">Update</button>
         </div>
       </form>
     </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Đăng Ký</title>
+    <title>Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -46,11 +46,11 @@
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
                 <form class="login100-form validate-form" method="POST" action="{{ route('register.submit') }}">
                     <span class="login100-form-title p-b-49">
-                        Đăng Ký
+                        Register
                     </span>
                     @csrf
                     <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
-                        <span class="label-input100">Họ tên</span>
+                        <span class="label-input100">Full Name</span>
                         <input class="input100" type="text" name="name" value="{{old('name')}}" placeholder="Nhập họ tên">
                         @error('name')
                         <span class="focus-input100" data-symbol="&#xf206;">{{$message}}</span>
@@ -64,37 +64,37 @@
                         @enderror
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <span class="label-input100">Mật khẩu</span>
+                        <span class="label-input100">Password</span>
                         <input class="input100" type="password" name="password" value="{{old('password')}}" placeholder="Nhập mật khẩu của bạn">
                         @error('password')
                         <span class="focus-input100" data-symbol="&#xf190;">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <span class="label-input100">Nhập lại mật khẩu</span>
+                        <span class="label-input100">Repeat Password</span>
                         <input class="input100" type="password" name="password_confirmation" value="{{old('password_confirmation')}}" placeholder="Nhập lại mật khẩu">
                         @error('password_confirmation')
                         <span class="focus-input100" data-symbol="&#xf190;">{{$message}}</span>
                         @enderror
                     </div>
-                    
+
                     <div class="text-right p-t-8 p-b-31">
                     </div>
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
                             <button class="login100-form-btn" type="submit">
-                                Đăng ký
+                                Register
                             </button>
                         </div>
                     </div>
                     <div class="flex-col-c p-t-155">
                         <span class="txt1 p-b-17">
-                            Bạn đã có tài khoản
+                            You have already account?
                         </span>
 
                         <a href="{{route('login.form')}}" class="txt2">
-                            Đăng nhập
+                            Log in
                         </a>
                     </div>
                 </form>

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('main-content')
-@section('title','Thanh toán')
+@section('title','Payment')
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -10,9 +10,9 @@
                     <div class="breadcrumb__text">
                         <h4>Thanh toán</h4>
                         <div class="breadcrumb__links">
-                            <a href="{{route('home')}}">Trang Chủ</a>
+                            <a href="{{route('home')}}">Home</a>
                             <a href="{{route('product-grids')}}">Shop</a>
-                            <span>Thanh toán</span>
+                            <span>Pay</span>
                         </div>
                     </div>
                 </div>
@@ -29,42 +29,42 @@
                     @csrf
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
-                           
-                            <h6 class="checkout__title">Chi tiết thanh toán</h6>
+
+                            <h6 class="checkout__title">Payment Detail</h6>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
-                                        <p>Họ<span>*</span></p>
+                                        <p>First Name<span>*</span></p>
                                         <input type="text" name="first_name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
-                                        <p>Tên<span>*</span></p>
+                                        <p>Name<span>*</span></p>
                                         <input type="text" name="last_name">
                                     </div>
                                 </div>
                             </div>
                             <div class="checkout__input">
-                                <p>Quốc gia<span>*</span></p>
+                                <p>City<span>*</span></p>
                                 <input type="text" name="country">
                             </div>
                             <div class="checkout__input">
-                                <p>Địa chỉ 1<span>*</span></p>
-                                <input type="text" name="address1" placeholder="Street Address" class="checkout__input__add">
+                                <p>District<span>*</span></p>
+                                <input type="text" name="address1" class="checkout__input__add">
                             </div>
                             <div class="checkout__input">
-                                <p>Địa chỉ 2<span>*</span></p>
+                                <p>Address<span>*</span></p>
                                 <input type="text" name="address2">
                             </div>
                             <div class="checkout__input">
-                                <p>Mã bưu điện<span>*</span></p>
+                                <p>ZIP Code<span>*</span></p>
                                 <input type="text" name="post_code">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
-                                        <p>Điện thoại<span>*</span></p>
+                                        <p>Phone<span>*</span></p>
                                         <input type="text" name="phone">
                                     </div>
                                 </div>
@@ -78,12 +78,12 @@
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
-                                <h4 class="order__title">Đơn hàng của bạn</h4>
-                                <div class="checkout__order__products">Sảm Phẩm <span>Thành tiền</span></div>
+                                <h4 class="order__title">Your Order</h4>
+                                <div class="checkout__order__products">Product <span>Total</span></div>
                                 <ul class="checkout__total__products">
                                     @if(Helper::getAllProductFromCart())
 									@foreach(Helper::getAllProductFromCart() as $key=>$cart)
-                                    <li>{{$cart->product['title']}} <span>{{number_format($cart['price']),2}}VNĐ</span></li>
+                                    <li>{{$cart->product['title']}} <span>{{number_format($cart['price']),2}}$</span></li>
                                     @endforeach
                                     @endif
                                 </ul>
@@ -91,18 +91,18 @@
                                     <li class="shipping">
                                         @if(count(Helper::shipping())>0 && Helper::cartCount()>0)
                                             <select name="shipping" class="nice-select">
-                                                <option value="">Chọn đơn vị vận chuyển</option>
+                                                <option value="">Choose Shipping Company</option>
                                                 @foreach(Helper::shipping() as $shipping)
-                                                <option value="{{$shipping->id}}" class="shippingOption" data-price="{{$shipping->price}}">{{$shipping->type}}: {{number_format($shipping->price),2}}VNĐ</option>
+                                                <option value="{{$shipping->id}}" class="shippingOption" data-price="{{$shipping->price}}">{{$shipping->type}}: {{number_format($shipping->price),2}}$</option>
                                                 @endforeach
                                             </select>
-                                        @else 
-                                            <span>Miễn phí</span>
+                                        @else
+                                            <span>Free</span>
                                         @endif
                                     </li>
-                                    <li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Tạm tính <span>{{number_format(Helper::totalCartPrice()),2}}VNĐ</span></li>
+                                    <li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Tạm tính <span>{{number_format(Helper::totalCartPrice()),2}}$</span></li>
                                     <li>@if(session('coupon'))
-                                        <li class="coupon_price" data-price="{{session('coupon')['value']}}">Khuyến mãi<span>{{number_format(session('coupon')['value']),2}}VNĐ</span></li>
+                                        <li class="coupon_price" data-price="{{session('coupon')['value']}}">Khuyến mãi<span>{{number_format(session('coupon')['value']),2}}$</span></li>
                                         @endif
                                         @php
                                             $total_amount=Helper::totalCartPrice();
@@ -111,15 +111,15 @@
                                             }
                                         @endphp
                                         @if(session('coupon'))
-                                            <li class="last"  id="order_total_price">Tổng thanh toán<span>{{number_format($total_amount),2}}VNĐ</span></li>
+                                            <li class="last"  id="order_total_price">Total Pay<span>{{number_format($total_amount),2}}$</span></li>
                                         @else
-                                            <li class="last"  id="order_total_price">Tổng thanh toán<span>{{number_format($total_amount),2}}VNĐ</span></li>
+                                            <li class="last"  id="order_total_price">Total Pay<span>{{number_format($total_amount),2}}$</span></li>
                                         @endif</li>
                                 </ul>
 
                                 <div class="checkout__input__checkbox">
                                     <label for="payment">
-                                       Thanh toán khi nhận hàng
+                                       Pay when receive order
                                         <input type="checkbox" id="payment" name="payment_method" value="Thanh toán khi nhận hàng">
                                         <span class="checkmark"></span>
                                     </label>
@@ -131,7 +131,7 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <button type="submit" class="site-btn">Thanh toán</button>
+                                <button type="submit" class="site-btn">Pay</button>
                             </div>
                         </div>
                     </div>
@@ -201,9 +201,9 @@
 		$(document).ready(function(){
 			$('.shipping select[name=shipping]').change(function(){
 				let cost = parseFloat( $(this).find('option:selected').data('price') ) || 0;
-				let subtotal = parseFloat( $('.order_subtotal').data('price') ); 
-				let coupon = parseFloat( $('.coupon_price').data('price')  ) || 0; 
-				$('#order_total_price span').text((subtotal + cost-coupon).toFixed(2)+'VNĐ');
+				let subtotal = parseFloat( $('.order_subtotal').data('price') );
+				let coupon = parseFloat( $('.coupon_price').data('price')  ) || 0;
+				$('#order_total_price span').text((subtotal + cost-coupon).toFixed(2)+'$');
 			});
 
 		});

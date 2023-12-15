@@ -12,14 +12,14 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Mã hóa đơn</th>
-          <th>Họ Tên</th>
+          <th>Receipt Code</th>
+          <th>Full Name</th>
           <th>Email</th>
-          <th>Số Lượng</th>
-          <th>Phí vận chuyển</th>
-          <th>Tổng thanh toán</th>
-          <th>Trạng thái</th>
-          <th>Tùy chọn</th>
+          <th>Quantity</th>
+          <th>Shipping Fee</th>
+          <th>Total Fee</th>
+          <th>Status</th>
+          <th>Option</th>
         </tr>
       </thead>
       <tbody>
@@ -29,8 +29,8 @@
             <td>{{$order->first_name}} {{$order->last_name}}</td>
             <td>{{$order->email}}</td>
             <td>{{$order->quantity}}</td>
-            <td>{{number_format($order->shipping->price),2}}VNĐ</td>
-            <td>{{number_format($order->total_amount),2}}VNĐ</td>
+            <td>{{number_format($order->shipping->price),2}}$</td>
+            <td>{{number_format($order->total_amount),2}}$</td>
             <td>
                 @if($order->status=='new')
                   <span class="badge badge-primary">{{$order->status}}</span>
@@ -60,42 +60,42 @@
         <div class="row">
           <div class="col-lg-6 col-lx-4">
             <div class="order-info">
-              <h4 class="text-center pb-4">Thông tin đơn hàng</h4>
+              <h4 class="text-center pb-4">Order Information</h4>
               <table class="table">
                     <tr class="">
-                        <td>Mã Hóa đơn</td>
+                        <td>Receipt Code</td>
                         <td> : {{$order->order_number}}</td>
                     </tr>
                     <tr>
-                        <td>Ngày Lập</td>
+                        <td>Date</td>
                         <td> : {{$order->created_at->format('D d M, Y')}} at {{$order->created_at->format('g : i a')}} </td>
                     </tr>
                     <tr>
-                        <td>Số Lượng</td>
+                        <td>Quantity</td>
                         <td> : {{$order->quantity}}</td>
                     </tr>
                     <tr>
-                        <td>Trạng Thái Đơn Hànn</td>
+                        <td>Order Status</td>
                         <td> : {{$order->status}}</td>
                     </tr>
                     <tr>
-                        <td>Phí vận chuyển</td>
-                        <td> :  {{number_format($order->shipping->price),2}}VNĐ</td>
+                        <td>Shipping Fee</td>
+                        <td> :  {{number_format($order->shipping->price),2}}$</td>
                     </tr>
                     <tr>
-                      <td>Mã giảm giá</td>
-                      <td> : {{number_format($order->coupon,2)}}VNĐ</td>
+                      <td>Coupon Code</td>
+                      <td> : {{number_format($order->coupon,2)}}$</td>
                     </tr>
                     <tr>
-                        <td>Tổng Thanh Toán</td>
-                        <td> :  {{number_format($order->total_amount),2}}VNĐ</td>
+                        <td>Total Fee</td>
+                        <td> :  {{number_format($order->total_amount),2}}$</td>
                     </tr>
                     <tr>
-                        <td>Phương thức</td>
+                        <td>Method</td>
                         <td> : @if($order->payment_method=='cod') Cash on Delivery @else Paypal @endif</td>
                     </tr>
                     <tr>
-                        <td>Trạng thái</td>
+                        <td>Status</td>
                         <td> : {{$order->payment_status}}</td>
                     </tr>
               </table>
@@ -104,10 +104,10 @@
 
           <div class="col-lg-6 col-lx-4">
             <div class="shipping-info">
-              <h4 class="text-center pb-4">Thông tin vận chuyển</h4>
+              <h4 class="text-center pb-4">Shipping Information</h4>
               <table class="table">
                     <tr class="">
-                        <td>Họ Và Tên</td>
+                        <td>Full Name</td>
                         <td> : {{$order->first_name}} {{$order->last_name}}</td>
                     </tr>
                     <tr>
@@ -115,19 +115,19 @@
                         <td> : {{$order->email}}</td>
                     </tr>
                     <tr>
-                        <td>Điện Thoại</td>
+                        <td>Phone</td>
                         <td> : {{$order->phone}}</td>
                     </tr>
                     <tr>
-                        <td>Địa chỉ</td>
+                        <td>Address</td>
                         <td> : {{$order->address1}}, {{$order->address2}}</td>
                     </tr>
                     <tr>
-                        <td>Quốc gia</td>
+                        <td>Nation</td>
                         <td> : {{$order->country}}</td>
                     </tr>
                     <tr>
-                        <td>Mã Bưu Điện</td>
+                        <td>ZIP Code</td>
                         <td> : {{$order->post_code}}</td>
                     </tr>
               </table>

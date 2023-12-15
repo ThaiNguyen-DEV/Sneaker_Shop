@@ -12,8 +12,8 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('shipping.index') }}">Vận chuyển</a></li>
-                <li class="breadcrumb-item active">Danh sách</li>
+                <li class="breadcrumb-item"><a href="{{ route('shipping.index') }}">Shipping</a></li>
+                <li class="breadcrumb-item active">List</li>
             </ol>
         </div>
       <a href="{{route('shipping.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i>Tạo mới</a>
@@ -25,10 +25,10 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Tên đơn vị</th>
-              <th>Phí vận chuyển</th>
-              <th>Trạng thái</th>
-              <th>Tùy chọn</th>
+              <th>Shipping Company</th>
+              <th>Shipping Fee</th>
+              <th>Status</th>
+              <th>Option</th>
             </tr>
           </thead>
           <tbody>
@@ -52,14 +52,14 @@
                               <button class="btn btn-danger btn-sm dltBtn" data-id={{$shipping->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
-                   
+
                 </tr>
             @endforeach
           </tbody>
         </table>
         <span style="float:right">{{$shippings->links()}}</span>
         @else
-          <h6 class="text-center">Không có dữ liệu vui lòng tạo mới</h6>
+          <h6 class="text-center">New Data Empty!</h6>
         @endif
       </div>
     </div>

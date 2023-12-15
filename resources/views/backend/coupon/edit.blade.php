@@ -7,8 +7,8 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('coupon.index') }}">Khuyến mãi</a></li>
-                <li class="breadcrumb-item active">Cập nhật</li>
+                <li class="breadcrumb-item"><a href="{{ route('coupon.index') }}">Sale</a></li>
+                <li class="breadcrumb-item active">Updates</li>
             </ol>
         </div>
         </div>

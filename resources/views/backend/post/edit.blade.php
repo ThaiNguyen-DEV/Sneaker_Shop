@@ -7,8 +7,8 @@
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-left">
             <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Bài viết</a></li>
-            <li class="breadcrumb-item active">Cập nhật</li>
+            <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Post</a></li>
+            <li class="breadcrumb-item active">Update</li>
         </ol>
     </div>
     </div>
@@ -17,7 +17,7 @@
         @csrf
         @method('PATCH')
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Tên bài viết <span class="text-danger">*</span></label>
+          <label for="inputTitle" class="col-form-label">Post Name <span class="text-danger">*</span></label>
           <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{$post->title}}" class="form-control">
           @error('title')
           <span class="text-danger">{{$message}}</span>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-          <label for="quote" class="col-form-label">Trích dẫn</label>
+          <label for="quote" class="col-form-label">Quote</label>
           <textarea class="form-control" id="quote" name="quote">{{$post->quote}}</textarea>
           @error('quote')
           <span class="text-danger">{{$message}}</span>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-          <label for="summary" class="col-form-label">Mô tả ngắn <span class="text-danger">*</span></label>
+          <label for="summary" class="col-form-label">Description <span class="text-danger">*</span></label>
           <textarea class="form-control" id="summary" name="summary">{{$post->summary}}</textarea>
           @error('summary')
           <span class="text-danger">{{$message}}</span>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-          <label for="description" class="col-form-label">Mô tả</label>
+          <label for="description" class="col-form-label">Description</label>
           <textarea class="form-control" id="description" name="description">{{$post->description}}</textarea>
           @error('description')
           <span class="text-danger">{{$message}}</span>
@@ -49,7 +49,7 @@
         </div>
 
         <div class="form-group">
-          <label for="post_cat_id">Loại bài viết <span class="text-danger">*</span></label>
+          <label for="post_cat_id">Post Type <span class="text-danger">*</span></label>
           <select name="post_cat_id" class="form-control">
               <option value="">--Select any category--</option>
               @foreach($categories as $key=>$data)
@@ -63,7 +63,7 @@
                 // dd($tags);
               @endphp
         <div class="form-group">
-          <label for="tags">Thẻ</label>
+          <label for="tags">Tag</label>
           <select name="tags[]" multiple  data-live-search="true" class="form-control selectpicker">
               <option value="">--Select any tag--</option>
               @foreach($tags as $key=>$data)
@@ -73,7 +73,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="added_by">Tác giả</label>
+          <label for="added_by">Author</label>
           <select name="added_by" class="form-control">
               <option value="">--Select any one--</option>
               @foreach($users as $key=>$data)
@@ -82,11 +82,11 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="inputPhoto" class="col-form-label">Hình ảnh <span class="text-danger">*</span></label>
+          <label for="inputPhoto" class="col-form-label">Image <span class="text-danger">*</span></label>
           <div class="input-group">
               <span class="input-group-btn">
                   <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i>Chọn ảnh
+                  <i class="fa fa-picture-o"></i>Choose Image
                   </a>
               </span>
           <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$post->photo}}">
@@ -99,7 +99,7 @@
         </div>
 
         <div class="form-group">
-          <label for="status" class="col-form-label">Trạng thái <span class="text-danger">*</span></label>
+          <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
             <option value="active" {{(($post->status=='active')? 'selected' : '')}}>Active</option>
             <option value="inactive" {{(($post->status=='inactive')? 'selected' : '')}}>Inactive</option>
@@ -109,7 +109,7 @@
           @enderror
         </div>
         <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Cập nhật</button>
+           <button class="btn btn-success" type="submit">Update</button>
         </div>
       </form>
     </div>

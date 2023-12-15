@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 
-@section('title','E-SHOP || Banner Create')
+@section('title','Banner Create')
 
 @section('main-content')
 <section class="content-header">
@@ -8,7 +8,7 @@
         <div class="row mb-2">
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-left">
-                    <li class="breadcrumb-item"><a href="{{route('admin')}}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin')}}"> <i class="nav-icon fas fa fa-home"></i> Home</a></li>
                     <li class="breadcrumb-item"><a href="{{route('banner.index')}}">Slider</a></li>
                     <li class="breadcrumb-item active">Add</li>
                 </ol>
@@ -21,7 +21,7 @@
       <form method="post" action="{{route('banner.store')}}">
         {{csrf_field()}}
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Tittle <span class="text-danger">*</span></label>
+          <label for="inputTitle" class="col-form-label">Title <span class="text-danger">*</span></label>
         <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{old('title')}}" class="form-control">
         @error('title')
         <span class="text-danger">{{$message}}</span>

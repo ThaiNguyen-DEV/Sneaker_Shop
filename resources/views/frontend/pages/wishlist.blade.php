@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title', 'Yêu thích')
+@section('title', 'Wishlist')
 @section('main-content')
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -7,11 +7,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Sản phẩm yêu thích</h4>
+                        <h4>Wishlist Products</h4>
                         <div class="breadcrumb__links">
-                            <a href="{{ route('home') }}">Trang chủ</a>
+                            <a href="{{ route('home') }}">Home</a>
                             <a href="{{ route('product-grids') }}">Shop</a>
-                            <span>Sản phẩm yêu thích</span>
+                            <span>Wishlist Products</span>
                         </div>
                     </div>
                 </div>
@@ -29,10 +29,10 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Hình ảnh</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Giá</th>
-                                    <th>Xóa</th>
+                                    <th>Image</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,13 +49,13 @@
                                                 </div>
                                             </td>
                                             <td>{{$wishlist->product['title']}}</td>
-                                            <td class="cart__price">{{number_format($wishlist['amount']),2}} VNĐ</td>
+                                            <td class="cart__price">{{number_format($wishlist['amount']),2}} $</td>
                                             <td class="cart__close"><a href="{{route('wishlist-delete',$wishlist->id)}}"><i
                                                 class="fa fa-close" style="height: 40px"></i></a></td>
                                         </tr>
                                     @endforeach
                                     @else
-                                    <h3> Không có dữ liệu</h3>
+                                    <h3> Data Empty</h3>
                                 @endif
                             </tbody>
                         </table>

@@ -12,8 +12,8 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('post-category.index') }}">Loại bài viết</a></li>
-                <li class="breadcrumb-item active">Danh sách</li>
+                <li class="breadcrumb-item"><a href="{{ route('post-category.index') }}">Post Type</a></li>
+                <li class="breadcrumb-item active">List</li>
             </ol>
         </div>
       <a href="{{route('post-category.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i>Tạo mới<a>
@@ -25,10 +25,10 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Tiêu đề</th>
+              <th>Title</th>
               <th>Slug</th>
-              <th>Trạng thái</th>
-              <th>Tùy chọn</th>
+              <th>Status</th>
+              <th>Option</th>
             </tr>
           </thead>
 
@@ -79,7 +79,7 @@
         </table>
         <span style="float:right">{{$postCategories->links()}}</span>
         @else
-          <h6 class="text-center">Không có dữ liệu vui lòng tạo mới</h6>
+          <h6 class="text-center">New Data Empty!</h6>
         @endif
       </div>
     </div>

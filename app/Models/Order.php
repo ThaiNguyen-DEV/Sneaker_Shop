@@ -14,7 +14,7 @@ class Order extends Model
         return Order::with('cart_info')->find($id);
     }
     public static function countActiveOrder(){
-        $data=Order::count();
+        $data=Order::where('status','new')->count();
         if($data){
             return $data;
         }

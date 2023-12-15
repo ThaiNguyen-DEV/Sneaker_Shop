@@ -25,13 +25,13 @@ class CreateSettingsTable extends Migration
             $table->timestamps();
         });
         DB::table('settings')->insert([
-            'description'=>'Chào mừng bạn đến với cửa hàng của Khánh!',
-            'short_des'=>'shsshsggs',
+            'description'=>'Welcome to LaravelShop!',
+            'short_des'=>'Kick It Up a Notch',
             'logo'=>'/storage/photos/1/Settings/logo.png',
             'photo'=>'/storage/photos/1/Settings/footer-logo.png',
-            'address'=>'Điện Biên Phủ,Bình Thạnh,TP HCM',
+            'address'=>'DA NANG',
             'phone'=>'0123456789',
-            'email'=>'admin@gmail.com',
+            'email'=>'laravelshop@gmail.com',
         ]
         );
     }

@@ -7,10 +7,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>Về chúng tôi</h4>
+                    <h4>About us</h4>
                     <div class="breadcrumb__links">
-                        <a href="{{route('home')}}">Trang chủ</a>
-                        <span>Về chúng tôi</span>
+                        <a href="{{route('home')}}">Home</a>
+                        <span>About us</span>
                     </div>
                 </div>
             </div>
@@ -142,28 +142,28 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team__item">
                     <img src="{{asset('frontend/img/about/team-1.jpg')}}" alt="">
-                    <h4>John Smith</h4>
+                    <h4>Tran Nhat Lam</h4>
                     <span>Fashion Design</span>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team__item">
                     <img src="{{asset('frontend/img/about/team-2.jpg')}}" alt="">
-                    <h4>Christine Wise</h4>
+                    <h4>Nguyen Dinh Duy Thai</h4>
                     <span>C.E.O</span>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team__item">
                     <img src="{{asset('frontend/img/about/team-3.jpg')}}" alt="">
-                    <h4>Sean Robbins</h4>
+                <h4>Nguyen Quang Phong</h4>
                     <span>Manager</span>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team__item">
                     <img src="{{asset('frontend/img/about/team-4.jpg')}}" alt="">
-                    <h4>Lucy Myers</h4>
+                    <h4>Duong Hien Minh Phuc</h4>
                     <span>Delivery</span>
                 </div>
             </div>

@@ -9,7 +9,7 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách đơn hàng</h6>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Order List</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -18,29 +18,29 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Mã hóa đơn</th>
-              <th>Họ Tên</th>
+              <th>Receipt Code</th>
+              <th>Full Name</th>
               <th>Email</th>
-              <th>Số Lượng</th>
-              <th>Phí vận chuyển</th>
-              <th>Tổng thanh toán</th>
-              <th>Trạng thái</th>
-              <th>Tùy chọn</th>
+              <th>Quantity</th>
+              <th>Shipping Fee</th>
+              <th>Total Fee</th>
+              <th>Status</th>
+              <th>Option</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($orders as $order)  
+            @foreach($orders as $order)
             @php
                 $shipping_charge=DB::table('shippings')->where('id',$order->shipping_id)->pluck('price');
-            @endphp 
+            @endphp
                 <tr>
                     <td>{{$order->id}}</td>
                     <td>{{$order->order_number}}</td>
                     <td>{{$order->first_name}} {{$order->last_name}}</td>
                     <td>{{$order->email}}</td>
                     <td>{{$order->quantity}}</td>
-                    <td>@foreach($shipping_charge as $data) {{number_format($data),2}}VNĐ @endforeach</td>
-                    <td>{{number_format($order->total_amount),2}}VNĐ</td>
+                    <td>@foreach($shipping_charge as $data) {{number_format($data),2}}$ @endforeach</td>
+                    <td>{{number_format($order->total_amount),2}}$</td>
                     <td>
                         @if($order->status=='new')
                           <span class="badge badge-primary">{{$order->status}}</span>
@@ -56,18 +56,18 @@
                         <a href="{{route('order.show',$order->id)}}" class="btn btn-warning btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="view" data-placement="bottom"><i class="fas fa-eye"></i></a>
                         <a href="{{route('order.edit',$order->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
                         <form method="POST" action="{{route('order.destroy',[$order->id])}}">
-                          @csrf 
+                          @csrf
                           @method('delete')
                               <button class="btn btn-danger btn-sm dltBtn" data-id={{$order->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
-                </tr>  
+                </tr>
             @endforeach
           </tbody>
         </table>
         <span style="float:right">{{$orders->links()}}</span>
         @else
-          <h6 class="text-center">Không có dữ liệu</h6>
+          <h6 class="text-center">Data Empty!</h6>
         @endif
       </div>
     </div>
@@ -94,7 +94,7 @@
   <!-- Page level custom scripts -->
   <script src="{{asset('backend/js/demo/datatables-demo.js')}}"></script>
   <script>
-      
+
       $('#order-dataTable').DataTable( {
             "columnDefs":[
                 {
@@ -107,7 +107,7 @@
         // Sweet alert
 
         function deleteData(id){
-            
+
         }
   </script>
   <script>

@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','E-SHOP || Banner Page')
+@section('title','Banner Page')
 @section('main-content')
  <!-- DataTales Example -->
  <div class="card shadow mb-4">
@@ -11,7 +11,7 @@
     <div class="card-header py-3">
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
-                <li class="breadcrumb-item"><a href="{{route('admin')}}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin')}}"> <i class="nav-icon fas fa fa-home"></i> Home</a></li>
                 <li class="breadcrumb-item"><a href="{{route('banner.index')}}">Slider</a></li>
                 <li class="breadcrumb-item active">List</li>
             </ol>

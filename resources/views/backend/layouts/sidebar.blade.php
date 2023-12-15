@@ -15,7 +15,7 @@
     <li class="nav-item active">
       <a class="nav-link" href="{{route('admin')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Bảng điều khiển</span></a>
+        <span>Dashboard</span></a>
     </li>
 
     <!-- Divider -->
@@ -31,13 +31,13 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route('file-manager')}}">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Quản lý file</span></a>
+            <span>File Management</span></a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{route('banner.index')}}" >
         <i class="fas fa-image"></i>
-        <span>Ảnh Bìa</span>
+        <span>Banner</span>
       </a>
 
     </li>
@@ -51,14 +51,14 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('category.index')}}" >
           <i class="fas fa-sitemap"></i>
-          <span>Danh mục</span>
+          <span>Category</span>
         </a>
     </li>
     {{-- Products --}}
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('product.index')}}" >
           <i class="fas fa-cubes"></i>
-          <span>Sản phẩm</span>
+          <span>Products</span>
         </a>
 
     </li>
@@ -67,7 +67,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('brand.index')}}" >
           <i class="fas fa-table"></i>
-          <span>Thương hiệu</span>
+          <span>Brand</span>
         </a>
     </li>
 
@@ -75,7 +75,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('shipping.index')}}">
           <i class="fas fa-truck"></i>
-          <span>Vận chuyển</span>
+          <span>Shipping</span>
         </a>
 
     </li>
@@ -84,7 +84,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route('order.index')}}">
             <i class="fas fa-hammer fa-chart-area"></i>
-            <span>Đơn hàng</span>
+            <span>Order</span>
         </a>
     </li>
 
@@ -92,7 +92,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route('review.index')}}">
             <i class="fas fa-comments"></i>
-            <span>Đánh giá</span></a>
+            <span>Rate</span></a>
     </li>
 
 
@@ -108,7 +108,7 @@
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{route('post.index')}}" >
         <i class="fas fa-fw fa-folder"></i>
-        <span>Bài viết</span>
+        <span>Posts</span>
       </a>
 
     </li>
@@ -117,7 +117,7 @@
      <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('post-category.index')}}" >
           <i class="fas fa-sitemap fa-folder"></i>
-          <span>Loại bài viết</span>
+          <span>Posts Type</span>
         </a>
 
       </li>
@@ -126,7 +126,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('post-tag.index')}}" >
             <i class="fas fa-tags fa-folder"></i>
-            <span>Thẻ</span>
+            <span>Tags</span>
         </a>
 
     </li>
@@ -135,7 +135,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route('comment.index')}}">
             <i class="fas fa-comments fa-chart-area"></i>
-            <span>Bình luận</span>
+            <span>Comments</span>
         </a>
       </li>
 
@@ -149,19 +149,19 @@
     <li class="nav-item">
       <a class="nav-link" href="{{route('coupon.index')}}">
           <i class="fas fa-table"></i>
-          <span>Khuyến Mãi</span></a>
+          <span>Coupon</span></a>
     </li>
      <!-- Users -->
      <li class="nav-item">
         <a class="nav-link" href="{{route('users.index')}}">
             <i class="fas fa-users"></i>
-            <span>Tài khoản</span></a>
+            <span>Account</span></a>
     </li>
      <!-- General settings -->
      <li class="nav-item">
         <a class="nav-link" href="{{route('settings')}}">
             <i class="fas fa-cog"></i>
-            <span>Cài đặt</span></a>
+            <span>Setting</span></a>
     </li>
 
     <!-- Sidebar Toggler (Sidebar) -->

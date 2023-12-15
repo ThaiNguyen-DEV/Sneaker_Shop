@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('main-content')
-@section('title','Liên hệ')
+@section('title','Contact')
 
 
     <!-- Map Begin -->
@@ -16,8 +16,8 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__text">
                         <div class="section-title">
-                            <h2>Liên hệ với K SHOP</h2>
-                            <p>Hỗ trợ từ 9:00 - 21:00</p>
+                            <h2>Contact with LaravelShop</h2>
+                            <p>Support 9:00 - 21:00</p>
                         </div>
                         <ul>
                             @php
@@ -26,8 +26,8 @@
                             @foreach($settings as $key=>$setting)
                             <li>
                                 <h4>Email: {{$setting->email}}</h4>
-                                <h4>Điện thoại: {{$setting->phone}}</h4>
-                                <h4>Địa chỉ: {!! $setting->address!!}</h4>
+                                <h4>Phone: {{$setting->phone}}</h4>
+                                <h4>Address: {!! $setting->address!!}</h4>
                             </li>
                             @endforeach
                         </ul>
@@ -39,20 +39,20 @@
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input type="text" name="name" placeholder="Họ và tên của bạn">
+                                    <input type="text" name="name" placeholder="Full Name">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" name="subject" placeholder="Chủ đề">
+                                    <input type="text" name="subject" placeholder="Topic">
                                 </div>
                                 <div class="col-lg-6">
                                     <input type="text" name="email" placeholder="Email">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" name="phone" placeholder="Điện thoại">
+                                    <input type="text" name="phone" placeholder="Phone">
                                 </div>
                                 <div class="col-lg-12">
-                                    <textarea name="message" placeholder="Nội dung bạn muốn gửi"></textarea>
-                                    <button type="submit" class="site-btn">Gửi Tới KSHOP</button>
+                                    <textarea name="message" placeholder="Content"></textarea>
+                                    <button type="submit" class="site-btn">Send to LaravelShop</button>
                                 </div>
                             </div>
                         </form>

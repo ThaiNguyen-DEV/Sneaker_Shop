@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Danh sách sản phẩm')
+@section('title','Product List')
 @section('main-content')
  <!-- Breadcrumb Section Begin -->
  <section class="breadcrumb-option">
@@ -9,7 +9,7 @@
                 <div class="breadcrumb__text">
                     <h4>Shop</h4>
                     <div class="breadcrumb__links">
-                        <a href="{{route('home')}}">Trang chủ</a>
+                        <a href="{{route('home')}}">Home</a>
                         <span>Shop</span>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="shop__sidebar__search">
                         <form action="{{route('product.search')}}" method="POST">
                             @csrf
-                            <input type="text" name="search" placeholder="Nhập ở đây...">
+                            <input type="text" name="search" placeholder="Enter here...">
                             <button type="submit"><span class="icon_search"></span></button>
                         </form>
                     </div>
@@ -36,7 +36,7 @@
                         <div class="accordion" id="accordionExample">
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseOne">Danh mục</a>
+                                    <a data-toggle="collapse" data-target="#collapseOne">Category</a>
                                 </div>
                                 @php
                                     $categories=DB::table('categories')->where('status','active')->where('is_parent','1')->get();
@@ -55,7 +55,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseTwo">Thương hiệu</a>
+                                    <a data-toggle="collapse" data-target="#collapseTwo">Brand</a>
                                 </div>
                                 @php
                                     $brands=DB::table('brands')->where('status','active')->get();
@@ -72,10 +72,10 @@
                                     </div>
                                 </div>
                             </div>
-                           
+
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseFour">Kích cỡ (Size)</a>
+                                    <a data-toggle="collapse" data-target="#collapseFour">Size (Size)</a>
                                 </div>
                                 <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
@@ -85,7 +85,7 @@
                                                 <input type="radio" id="{{$i}}">
                                             </label>
                                             @endfor
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -99,16 +99,16 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__left">
-                                <p>Tất cả có {{\App\Models\Product::countActiveProduct()}} Sản phẩm</p>
+                                <p>All {{\App\Models\Product::countActiveProduct()}} Products</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
-                                <p>Lọc sản phẩm theo:</p>
+                                <p>Product Filters:</p>
                                 <select>
-                                    <option value="">Thấp đến cao</option>
-                                    <option value="">Cao đến thấp</option>
-                                    <option value="">Sản phẩm bán chạy</option>
+                                    <option value="">Low to high</option>
+                                    <option value="">High to Low</option>
+                                    <option value="">Hot Products</option>
                                 </select>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                             </div>
                             <div class="product__item__text">
                                 <h6>{{$product->title}}</h6>
-                                <a href="{{route('add-to-cart',$product->slug)}}" class="add-cart">+Thêm vào giỏ</a>
+                                <a href="{{route('add-to-cart',$product->slug)}}" class="add-cart">+Add to cart</a>
                                 <div class="rating">
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
@@ -138,8 +138,8 @@
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                 </div>
-        
-                                <h5>{{number_format($product->price),2}}VNĐ</h5>
+
+                                <h5>{{number_format($product->price),2}}$</h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">

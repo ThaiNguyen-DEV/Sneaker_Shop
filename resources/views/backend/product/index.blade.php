@@ -12,8 +12,8 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('product.index') }}">Sản Phẩm</a></li>
-                <li class="breadcrumb-item active">Danh sách</li>
+                <li class="breadcrumb-item"><a href="{{ route('product.index') }}">Products</a></li>
+                <li class="breadcrumb-item active">List</li>
             </ol>
         </div>
       <a href="{{route('product.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i>Tạo mới</a>
@@ -25,18 +25,18 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Tên sản phẩm</th>
-              <th>Danh mục</th>
-              <th>Đặc biệt</th>
-              <th>Giá </th>
-              <th>Khuyến mãi</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Special</th>
+              <th>Price</th>
+              <th>Discount</th>
               <th>Size</th>
-              <th>Tình trạng</th>
-              <th>Thương hiệu</th>
-              <th>Số lượng</th>
-              <th>Hình ảnh</th>
-              <th>Trạng thái</th>
-              <th>Tùy chọn</th>
+              <th>Status</th>
+              <th>Brand</th>
+              <th>Quantity</th>
+              <th>Image</th>
+              <th>Status</th>
+              <th>Option</th>
             </tr>
           </thead>
           <tbody>
@@ -56,7 +56,7 @@
                       </sub>
                     </td>
                     <td>{{(($product->is_featured==1)? 'Yes': 'No')}}</td>
-                    <td>{{number_format($product->price),2}}VNĐ</td>
+                    <td>{{number_format($product->price),2}}$</td>
                     <td>  {{$product->discount}}% OFF</td>
                     <td>{{$product->size}}</td>
                     <td>{{$product->condition}}</td>
@@ -100,7 +100,7 @@
         </table>
         <span style="float:right">{{$products->links()}}</span>
         @else
-          <h6 class="text-center">Không có dữ liệu vui lòng tạo mới!</h6>
+          <h6 class="text-center">New Data Empty!</h6>
         @endif
       </div>
     </div>

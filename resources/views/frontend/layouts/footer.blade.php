@@ -17,7 +17,7 @@
             </div>
             <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                 <div class="footer__widget">
-                    <h6>Danh mục</h6>
+                    <h6>Category</h6>
                     <ul>
                         @php
                             $categories=DB::table('categories')->where('status','active')->limit(5)->get();
@@ -30,7 +30,7 @@
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6">
                 <div class="footer__widget">
-                    <h6>Thương hiệu</h6>
+                    <h6>Brand</h6>
                     <ul>
                         @php
                             $brand=DB::table('brands')->where('status','active')->limit(5)->get();
@@ -43,11 +43,11 @@
             </div>
             <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
                 <div class="footer__widget">
-                    <h6>Thông tin liên hệ</h6>
+                    <h6>Contact</h6>
                     <div class="footer__newslatter">
                         <p>Email: &emsp14;{{$setting->email}}</p>
-                        <p>Điện thoại: &emsp14;{{$setting->phone}}</p>
-                        <p>Địa chỉ: &emsp14;{{$setting->address}}</p>
+                        <p>Phone: &emsp14;{{$setting->phone}}</p>
+                        <p>Address: &emsp14;{{$setting->address}}</p>
                         <form action="#">
                             <input type="text" placeholder="Your email">
                             <button type="submit"><span class="icon_mail_alt"></span></button>
@@ -64,9 +64,9 @@
                     <p>Copyright ©
                         <script>
                             document.write(new Date().getFullYear());
-                        </script>2020
+                        </script>2023
                          <i class="fa fa-heart-o"
-                        aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Lập trình vlog</a>
+                        aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">LaravelShop</a>
                     </p>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>
@@ -82,7 +82,7 @@
         <div class="search-close-switch">+</div>
         <form class="search-model-form" method="POST" action="{{route('product.search')}}">
             @csrf
-            <input type="text" id="search-input" name="search" placeholder="Tìm kiếm ở đây.....">
+            <input type="text" id="search-input" name="search" placeholder="Search here.....">
         </form>
     </div>
 </div>

@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','E-SHOP || Comment Page')
+@section('title','LaravelShop - Comment Page')
 @section('main-content')
  <!-- DataTales Example -->
  <div class="card shadow mb-4">
@@ -12,8 +12,8 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('comment.index') }}">Bình luận</a></li>
-                <li class="breadcrumb-item active">Danh sách bình luận</li>
+                <li class="breadcrumb-item"><a href="{{ route('comment.index') }}">Comment</a></li>
+                <li class="breadcrumb-item active">Comment List</li>
             </ol>
         </div>
     </div>
@@ -61,7 +61,7 @@
         </table>
         <span style="float:right">{{$comments->links()}}</span>
         @else
-          <h6 class="text-center">Không có dữ liệu!</h6>
+          <h6 class="text-center">Data Empty!</h6>
         @endif
       </div>
     </div>

@@ -1,12 +1,12 @@
 @extends('frontend.layouts.master')
-@section('title','Bài viết')
+@section('title','Blog')
 @section('main-content')
  <!-- Breadcrumb Section Begin -->
  <section class="breadcrumb-blog set-bg" data-setbg="{{asset('frontend/img/breadcrumb-bg.jpg')}}">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Bài viết</h2>
+                <h2>Blog</h2>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
                     <div class="blog__item__text">
                         <span><img src="{{asset('frontend/img/icon/calendar.png')}}" alt="">{{$post->created_at->format('d,M,y')}}</span>
                         <h5>{{$post->title}}</h5>
-                        <a href="{{route('blog.detail',$post->slug)}}">Đọc thêm</a>
+                        <a href="{{route('blog.detail',$post->slug)}}">Read more</a>
                     </div>
                 </div>
             </div>

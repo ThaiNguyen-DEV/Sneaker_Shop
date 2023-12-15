@@ -13,8 +13,8 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-left">
                     <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('review.index') }}">Bình luận</a></li>
-                    <li class="breadcrumb-item active">Danh sách bình luận</li>
+                    <li class="breadcrumb-item"><a href="{{ route('review.index') }}">Comment</a></li>
+                    <li class="breadcrumb-item active">Comment List</li>
                 </ol>
             </div>
         </div>
@@ -27,12 +27,12 @@
             <tr>
               <th>Id</th>
               <th>Review By</th>
-              <th>Tên sản phẩm</th>
-              <th>Nội dung</th>
+              <th>Product Name</th>
+              <th>Content</th>
               <th>Rate</th>
-              <th>Ngày lập</th>
-              <th>Trạng thái</th>
-              <th>Tùy chọn</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Option</th>
             </tr>
           </thead>
           <tbody>
@@ -75,7 +75,7 @@
         </table>
         <span style="float:right">{{$reviews->links()}}</span>
         @else
-          <h6 class="text-center">Không có dữ  liệu</h6>
+          <h6 class="text-center">Data Empty!</h6>
         @endif
       </div>
     </div>

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('main-content')
-@section('title', 'Trang chủ')
+@section('title', 'Home')
 <!-- Hero Section Begin -->
 <section class="hero">
     <div class="hero__slider owl-carousel">
@@ -12,12 +12,12 @@
                             <div class="hero__text">
                                 <h6>{{ $banner->title }}</h6>
                                 <p>{!! $banner->description !!}</p>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
+{{--                                <div class="hero__social">--}}
+{{--                                    <a href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                                    <a href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                                    <a href="#"><i class="fa fa-pinterest"></i></a>--}}
+{{--                                    <a href="#"><i class="fa fa-instagram"></i></a>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
             <div class="col-lg-12">
                 <ul class="filter__controls">
                     {{-- <li class="active" data-filter=".best-sellers">Best Sellers</li> --}}
-                    <li class="active" data-filter="*">Our Products</li>
+                    <li class="active" data-filter="*">All Products</li>
                     @php
                         $categories = DB::table('categories')
                             ->where('status', 'active')
@@ -79,7 +79,7 @@
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $product->title }}</h6>
-                                <a href="{{ route('add-to-cart', $product->slug) }}" class="add-cart">+Thêm vào giỏ</a>
+                                <a href="{{ route('add-to-cart', $product->slug) }}" class="add-cart">+Add to cart</a>
                                 <div class="rating">
                                     @foreach ($product['getReview'] as $data)
                                         @for ($i = 1; $i <= 5; $i++)
@@ -97,7 +97,7 @@
                                 @php
                                     $discount = $product->price - ($product->price * $product->discount) / 100;
                                 @endphp
-                                <h5>{{ number_format($discount), 2 }}VNĐ</h5>
+                                <h5>{{ number_format($discount), 2 }}$</h5>
                                 <div class="product__color__select">
                                     <label for="pc-1">
                                         <input type="radio" id="pc-1">
@@ -123,20 +123,23 @@
 <section class="categories spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
-                <div class="categories__text">
-                    <h2>Phụ kiện giầy dép<br /> <span>Bộ Sưu Tập Giầy</span> <br />Sản phẩm hot</h2>
-                </div>
+            <div class="col-md-3">
+                <img src="" alt="">
             </div>
-            <div class="col-lg-4">
-                <div class="categories__hot__deal">
-                    <img src="{{ asset('frontend/img/sales.jpg') }}" alt="">
-                    <div class="hot__deal__sticker">
-                        <span>Sale Of</span>
-                        <h5>$29.99</h5>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="col-lg-3">--}}
+{{--                <div class="categories__text">--}}
+{{--                    <h2>Nike<br /> <span>Adidas</span> <br />Reebok</h2>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4">--}}
+{{--                <div class="categories__hot__deal">--}}
+{{--                    <img src="{{ asset('frontend/img/sales.jpg') }}" alt="">--}}
+{{--                    <div class="hot__deal__sticker">--}}
+{{--                        <span>Sale Of</span>--}}
+{{--                        <h5>30%</h5>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="col-lg-4 offset-lg-1">
                 <div class="categories__deal__countdown">
                     <span>Deal Of The Week</span>
@@ -173,8 +176,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <span>Bài viết</span>
-                    <h2>Xu hướng thời trang mới</h2>
+                    <span>Blog</span>
+                    <h2>Fashion Trending</h2>
                 </div>
             </div>
         </div>
@@ -188,7 +191,7 @@
                                 <span><img src="img/icon/calendar.png" alt="">
                                     {{ $post->created_at->format('d,M,Y') }}</span>
                                 <h5>{{ $post->title }}</h5>
-                                <a href="{{ route('blog.detail', $post->slug) }}">Đọc thêm</a>
+                                <a href="{{ route('blog.detail', $post->slug) }}">Read more</a>
                             </div>
                         </div>
                     </div>

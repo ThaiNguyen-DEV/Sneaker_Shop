@@ -7,8 +7,8 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-left">
                     <li class="breadcrumb-item"><a href="{{route('admin')}}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="{{route('shipping.index')}}">Vận chuyển</a></li>
-                    <li class="breadcrumb-item active">Tạo mới</li>
+                    <li class="breadcrumb-item"><a href="{{route('shipping.index')}}">Shipping</a></li>
+                    <li class="breadcrumb-item active">Add</li>
                 </ol>
             </div>
         </div>
@@ -19,7 +19,7 @@
       <form method="post" action="{{route('shipping.store')}}">
         {{csrf_field()}}
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Tên đơn vị vận chuyển<span class="text-danger">*</span></label>
+          <label for="inputTitle" class="col-form-label">Shipping Company<span class="text-danger">*</span></label>
         <input id="inputTitle" type="text" name="type" placeholder="Enter title"  value="{{old('type')}}" class="form-control">
         @error('type')
         <span class="text-danger">{{$message}}</span>
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-          <label for="price" class="col-form-label">Phí vận chuyển<span class="text-danger">*</span></label>
+          <label for="price" class="col-form-label">Shipping Fee<span class="text-danger">*</span></label>
         <input id="price" type="number" name="price" placeholder="Enter price"  value="{{old('price')}}" class="form-control">
         @error('price')
         <span class="text-danger">{{$message}}</span>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-          <label for="status" class="col-form-label">Trạng thái<span class="text-danger">*</span></label>
+          <label for="status" class="col-form-label">Status<span class="text-danger">*</span></label>
           <select name="status" class="form-control">
               <option value="active">Active</option>
               <option value="inactive">Inactive</option>
@@ -45,8 +45,8 @@
           @enderror
         </div>
         <div class="form-group mb-3">
-          <button type="reset" class="btn btn-warning">Làm mới</button>
-           <button class="btn btn-success" type="submit">Lưu</button>
+          <button type="reset" class="btn btn-warning">Refresh</button>
+           <button class="btn btn-success" type="submit">Save</button>
         </div>
       </form>
     </div>

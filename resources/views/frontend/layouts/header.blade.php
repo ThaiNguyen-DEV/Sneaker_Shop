@@ -9,9 +9,9 @@
      <div class="offcanvas__option">
          <div class="offcanvas__links">
              @auth
-                 <a href="{{ route('user.logout') }}">Đăng xuất</a>
+                 <a href="{{ route('user.logout') }}">Log out</a>
              @else
-                 <a href="{{ route('login.form') }}">Đăng nhập</a>
+                 <a href="{{ route('login.form') }}">Log in</a>
              @endauth
 
              {{-- <a href="#">FAQs</a> --}}
@@ -39,22 +39,22 @@
                     @php
                         $settings=DB::table('settings')->get();
                     @endphp
-                     <div class="header__top__left">
-                        @foreach ($settings as $setting)
-                        <p>{!!$setting->description!!}</p>
-                        @endforeach
-                       
-                     </div>
+{{--                     <div class="header__top__left">--}}
+{{--                        @foreach ($settings as $setting)--}}
+{{--                        <p>{!!$setting->description!!}</p>--}}
+{{--                        @endforeach--}}
+
+{{--                     </div>--}}
                  </div>
                  <div class="col-lg-6 col-md-5">
                      <div class="header__top__right">
                          <div class="header__top__links">
                              @auth
-                                 <a href="{{ route('user.logout') }}">Đăng xuất</a>
-                                 <a href="{{route('user')}}">Tài khoản</a>
+                                 <a href="{{ route('user.logout') }}">Log out</a>
+                                 <a href="{{route('user')}}">Account</a>
                              @else
-                                 <a href="{{ route('login.form') }}">Đăng nhập</a>
-                                 <a href="{{ route('register.form') }}">Đăng ký</a>
+                                 <a href="{{ route('login.form') }}">Login</a>
+                                 <a href="{{ route('register.form') }}">Register</a>
                              @endauth
                              {{-- <a href="#">FAQs</a> --}}
                          </div>
@@ -75,14 +75,14 @@
                         @foreach ($logo as $key=>$logos)
                         <img src="{{$logos->logo}}" alt=""></a>
                         @endforeach
-                       
+
                  </div>
              </div>
              <div class="col-lg-6 col-md-6">
                  <nav class="header__menu mobile-menu">
                      <ul>
-                         <li class="active"><a href="{{route('home')}}">Trang chủ</a></li>
-                         <li><a href="{{route('product-grids')}}">Sản phẩm</a></li>
+                         <li class="active"><a href="{{route('home')}}">Home</a></li>
+                         <li><a href="{{route('product-grids')}}">Product</a></li>
                              {{-- <ul class="dropdown">
                                  <li><a href="./about.html">About Us</a></li>
                                  <li><a href="./shop-details.html">Shop Details</a></li>
@@ -91,9 +91,9 @@
                                  <li><a href="./blog-details.html">Blog Details</a></li>
                              </ul> --}}
                          </li>
-                         <li><a href="{{route('blog')}}">Bài viết</a></li>
-                         <li><a href="{{route('contact')}}">Liên hệ</a></li>
-                         <li><a href="{{route('about-us')}}">Về chúng tôi</a>
+                         <li><a href="{{route('blog')}}">Blog</a></li>
+                         <li><a href="{{route('contact')}}">Contact</a></li>
+                         <li><a href="{{route('about-us')}}">About us</a>
                      </ul>
                  </nav>
              </div>
@@ -103,11 +103,11 @@
                      @auth
                      <a href="{{route('wishlist')}}"><img src="{{asset('frontend/img/icon/heart.png')}}" alt=""></a>
                      <a href="{{route('cart')}}"><img src="{{asset('frontend/img/icon/cart.png')}}" alt=""> <span>{{count(Helper::getAllProductFromCart())}}</span></a>
-                     <div class="price">{{number_format(Helper::totalCartPrice()),2}}VNĐ</div>
+                     <div class="price">{{number_format(Helper::totalCartPrice()),2}}$</div>
                      @else
-                     
+
                      @endauth
-                   
+
                  </div>
              </div>
          </div>

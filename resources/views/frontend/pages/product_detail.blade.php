@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title', 'Chi tiết sản phẩm')
+@section('title', 'Product Detail')
 @section('main-content')
     <!-- Shop Details Section Begin -->
     <section class="shop-details">
@@ -8,9 +8,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__breadcrumb">
-                            <a href="{{ route('home') }}">Trang chủ</a>
+                            <a href="{{ route('home') }}">Home</a>
                             <a href="">Shop</a>
-                            <span>Chi tiết sản phẩm</span>
+                            <span>Product Detail</span>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-lg-6 col-md-9">
                         <div class="tab-content">
-                           
+
                             @php
                                 $photo=explode(',',$product_detail->photo);
                             @endphp
@@ -51,28 +51,28 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="product__details__text">
-                            <h4>{{ $product_detail->title }}k</h4>
+                            <h4>{{ $product_detail->title }}</h4>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
-                                <span>{{\App\Models\ProductReview::countReview()}} Lượt Đánh Giá</span>
+                                <span>{{\App\Models\ProductReview::countReview()}} Reviews</span>
                             </div>
                             @php
                                 $discount = ($product_detail->price - (($product_detail->price * $product_detail->discount) / 100));
                             @endphp
                             @if($product_detail->discount==0)
-                            <h3> {{number_format($product_detail->price),2}}VNĐ</h3>
+                            <h3> {{number_format($product_detail->price),2}}$</h3>
                             @else
-                            <h3>{{ number_format($discount), 2 }}VNĐ<span>{{ number_format($product_detail->price), 2 }}VNĐ</span>
+                            <h3>{{ number_format($discount), 2 }}$<span>{{ number_format($product_detail->price), 2 }}$</span>
                                 @endif
                             </h3>
                             <p>{!! $product_detail->summary !!}</p>
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
-                                    <span>Kích cỡ:</span>
+                                    <span>Size:</span>
                                     @if ($product_detail->size)
                                         @php
                                             $sizes = explode(',', $product_detail->size);
@@ -87,23 +87,23 @@
                             </div>
                             <div class="product__details__cart__option">
                                 <form action="{{route('single-add-to-cart')}}" method="POST">
-                                    @csrf 
+                                    @csrf
                                 <div class="quantity">
                                     <div class="pro-qty">
                                         <input type="hidden" name="slug" value="{{$product_detail->slug}}">
                                         <input type="text" name="quant[1]" value="1" min="1">
                                     </div>
                                 </div>
-                              <button type="submit" class="primary-btn">Thêm vào giỏ hàng</button>
+                              <button type="submit" class="primary-btn">Add to cart</button>
                             </form>
                             </div>
-                     
+
                             <div class="product__details__btns__option">
                                 <a href="{{ route('add-to-wishlist', $product_detail->slug) }}"><i
-                                        class="fa fa-heart"></i>Thêm vào yêu thích</a>
+                                        class="fa fa-heart"></i>Add to Wishlist</a>
                             </div>
                             <div class="product__details__last__option">
-                               
+
                                 <img src="{{asset('frontend/img/shop-details/details-payment.png')}}" alt="">
                                 <ul>
                                     @php
@@ -112,8 +112,8 @@
                                             ->where('is_parent', '1')
                                             ->get();
                                     @endphp
-                                    <li><span>Số lượng:</span> &emsp14;{{ $product_detail->stock }}</li>
-                                    <li><span>Danh mục:</span> {{ $product_detail->cat_info['title'] }}</li>
+                                    <li><span>Quantity:</span> &emsp14;{{ $product_detail->stock }}</li>
+                                    <li><span>Category:</span> {{ $product_detail->cat_info['title'] }}</li>
                                     {{-- <li><span>Tag:</span> Clothes, Skin, Body</li> --}}
                                 </ul>
                             </div>
@@ -129,7 +129,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">
-                                        Đánh Giá</a>
+                                        Review</a>
                                 </li>
                                 {{-- <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Additional
@@ -149,7 +149,7 @@
                                         <form action="{{route('review.store',$product_detail->slug)}}" method="POST">
                                             @csrf
                                         <div class="product__details__tab__content__item">
-                                         <h5>Đánh giá sản phẩm</h5> <p><input type="radio" id="star5" name="rate" value="5" />
+                                         <h5>Review Product</h5> <p><input type="radio" id="star5" name="rate" value="5" />
                                             <label for="star5" title="text">5 *</label>
                                             <input type="radio" id="star4" name="rate" value="4" />
                                             <label for="star4" title="text">4 *</label>
@@ -159,11 +159,11 @@
                                             <label for="star2" title="text">2 *</label>
                                             <input type="radio" id="star1" name="rate" value="1" />
                                             <label for="star1" title="text">1 *</label></p>
-                                            <h5>Nhận xét của bạn</h5>
+                                            <h5>Your Review</h5>
                                             <p>
                                             <textarea  name="review" rows="6" placeholder="" ></textarea>
                                             </p>
-                                            <button type="submit" class="primary-btn">Đánh Giá</button>
+                                            <button type="submit" class="primary-btn">Review</button>
                                         </div>
                                         </form>
                                     </div>

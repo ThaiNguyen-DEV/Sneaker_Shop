@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Chi tiết bài viết')
+@section('title','Blog Detail')
 @section('main-content')
   <!-- Blog Details Hero Begin -->
   <section class="blog-hero spad">
@@ -52,7 +52,7 @@
                     </div> --}}
                     <div class="blog__details__text">
                         <p>{!!$post->quote !!}</p>
-                       
+
                     </div>
                     <div class="blog__details__option">
                         <div class="row">
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                             </div>
-                           
+
                         </div>
                     </div>
                     <div class="blog__details__comment">
@@ -82,7 +82,7 @@
                                 </div> --}}
                                 <div class="col-lg-12 text-center">
                                     <textarea placeholder="Comment" name="comment"></textarea>
-                                    <button type="submit" class="site-btn">Bình Luận</button>
+                                    <button type="submit" class="site-btn">Comment</button>
                                 </div>
                             </div>
                         </form>

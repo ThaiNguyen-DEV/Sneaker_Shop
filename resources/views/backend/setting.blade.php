@@ -7,8 +7,8 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{route('shipping.index')}}">Cài đặt</a></li>
-                <li class="breadcrumb-item active">Cập nhật</li>
+                <li class="breadcrumb-item"><a href="{{route('shipping.index')}}">Setting</a></li>
+                <li class="breadcrumb-item active">Update</li>
             </ol>
         </div>
     </div>
@@ -18,14 +18,14 @@
         {{-- @method('PATCH') --}}
         {{-- {{dd($data)}} --}}
         <div class="form-group">
-          <label for="short_des" class="col-form-label">Mô tả ngắn <span class="text-danger">*</span></label>
+          <label for="short_des" class="col-form-label">Description <span class="text-danger">*</span></label>
           <textarea class="form-control" id="quote" name="short_des">{{$data->short_des}}</textarea>
           @error('short_des')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group">
-          <label for="description" class="col-form-label">Mô tả <span class="text-danger">*</span></label>
+          <label for="description" class="col-form-label">Description <span class="text-danger">*</span></label>
           <textarea class="form-control" id="description" name="description">{{$data->description}}</textarea>
           @error('description')
           <span class="text-danger">{{$message}}</span>
@@ -37,7 +37,7 @@
           <div class="input-group">
               <span class="input-group-btn">
                   <a id="lfm1" data-input="thumbnail1" data-preview="holder1" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i>Chọn ảnh
+                  <i class="fa fa-picture-o"></i>Choose Image
                   </a>
               </span>
           <input id="thumbnail1" class="form-control" type="text" name="logo" value="{{$data->logo}}">
@@ -50,11 +50,11 @@
         </div>
 
         <div class="form-group">
-          <label for="inputPhoto" class="col-form-label">Hình ảnh footer <span class="text-danger">*</span></label>
+          <label for="inputPhoto" class="col-form-label">Footer Image <span class="text-danger">*</span></label>
           <div class="input-group">
               <span class="input-group-btn">
                   <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i>Chọn ảnh
+                  <i class="fa fa-picture-o"></i>Choose Image
                   </a>
               </span>
           <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$data->photo}}">
@@ -81,7 +81,7 @@
           @enderror
         </div>
         <div class="form-group">
-          <label for="phone" class="col-form-label">Điện thoại <span class="text-danger">*</span></label>
+          <label for="phone" class="col-form-label">Phone <span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="phone" required value="{{$data->phone}}">
           @error('phone')
           <span class="text-danger">{{$message}}</span>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Cập nhật</button>
+           <button class="btn btn-success" type="submit">Update</button>
         </div>
       </form>
     </div>

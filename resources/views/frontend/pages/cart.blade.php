@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title', 'Giỏ hàng')
+@section('title', 'Cart')
 @section('main-content')
 
     <!-- Breadcrumb Section Begin -->
@@ -8,11 +8,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Giỏ hàng</h4>
+                        <h4>Cart</h4>
                         <div class="breadcrumb__links">
-                            <a href="{{ route('home') }}">Trang chủ</a>
+                            <a href="{{ route('home') }}">Home</a>
                             <a href="{{route('product-grids')}}">Shop</a>
-                            <span>Giỏ hàng của bạn</span>
+                            <span>Your Cart</span>
                         </div>
                     </div>
                 </div>
@@ -30,9 +30,9 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Thành tiền</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -52,7 +52,7 @@
                                                     </div>
                                                     <div class="product__cart__item__text">
                                                         <h6>{{ $cart->product['title'] }}</h6>
-                                                        <h5>{{ number_format($cart['price']),2 }}VNĐ</h5>
+                                                        <h5>{{ number_format($cart['price']),2 }}$</h5>
                                                     </div>
                                                 </td>
                                                 <td class="quantity__item">
@@ -65,7 +65,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="cart__price">{{ number_format($cart['amount']), 2 }}VNĐ</td>
+                                                <td class="cart__price">{{ number_format($cart['amount']), 2 }}$</td>
                                                 <td class="cart__close"><a
                                                         href="{{ route('cart-delete', $cart->id) }}"><i
                                                             class="fa fa-close" style="height: 40px"></i></a></td>
@@ -79,12 +79,12 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn">
-                                <a href="{{ route('product-grids') }}">Tiếp tục mua hàng</a>
+                                <a href="{{ route('product-grids') }}">Continue Shopping</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn update__btn">
-                                <button class="primary-btn" type="submit">Cập nhật giỏ hàng</button>
+                                <button class="primary-btn" type="submit">Update Cart</button>
                             </div>
                         </div>
                         </form>
@@ -92,15 +92,15 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="cart__discount">
-                        <h6>Mã giảm giá</h6>
+                        <h6>Discount Code</h6>
                         <form action="{{ route('coupon-store') }}" method="POST">
                             @csrf
-                            <input type="text" name="code" placeholder="Nhập mã giảm giá">
-                            <button type="submit">Áp dụng</button>
+                            <input type="text" name="code" placeholder="Enter Discount Code">
+                            <button type="submit">Apply</button>
                         </form>
                     </div>
                     <div class="cart__total">
-                        <h6>Cộng giỏ hàng</h6>
+                        <h6>Add Cart</h6>
                         <ul>
                             @php
                                 $total_amount = Helper::totalCartPrice();
@@ -108,19 +108,19 @@
                                     $total_amount = $total_amount - Session::get('coupon')['value'];
                                 }
                             @endphp
-                            <li data-price="{{ Helper::totalCartPrice() }}">Tạm tính
-                                <span>{{ number_format(Helper::totalCartPrice()),2 }}VNĐ</span></li>
+                            <li data-price="{{ Helper::totalCartPrice() }}">Temporary
+                                <span>{{ number_format(Helper::totalCartPrice()),2 }}$</span></li>
                             @if (session()->has('coupon'))
                                 <li class="coupon_price" data-price="{{ Session::get('coupon')['value'] }}">Khuyến mãi
-                                    <span>{{ number_format(Session::get('coupon')['value']),2 }}VNĐ</span></li>
+                                    <span>{{ number_format(Session::get('coupon')['value']),2 }}$</span></li>
                             @endif
                             @if (session()->has('coupon'))
-                                <li>Tổng thanh toán <span>{{ number_format($total_amount), 2 }}VNĐ</span></li>
+                                <li>Total pay <span>{{ number_format($total_amount), 2 }}$</span></li>
                             @else
-                                <li>Tổng thanh toán <span>{{ number_format($total_amount), 2 }}VNĐ</span></li>
+                                <li>Total pay <span>{{ number_format($total_amount), 2 }}$</span></li>
                             @endif
                         </ul>
-                        <a href="{{ route('checkout') }}" class="primary-btn">Thanh toán</a>
+                        <a href="{{ route('checkout') }}" class="primary-btn">Pay</a>
                     </div>
                 </div>
             </div>

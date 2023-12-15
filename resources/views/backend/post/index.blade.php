@@ -12,8 +12,8 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}"> <i class="nav-icon fas fa fa-home"></i> Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Bài viết</a></li>
-                <li class="breadcrumb-item active">Danh sách</li>
+                <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Post</a></li>
+                <li class="breadcrumb-item active">List</li>
             </ol>
         </div>
       <a href="{{route('post.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Tạo mới</a>
@@ -25,13 +25,13 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Tiêu đề</th>
-              <th>Loại bài viết</th>
-              <th>Thẻ</th>
-              <th>Tác giả</th>
-              <th>Hình ảnh</th>
-              <th>Trạng thái</th>
-              <th>Tùy chọn</th>
+              <th>Title</th>
+              <th>Post Type</th>
+              <th>Tag</th>
+              <th>Author</th>
+              <th>Image</th>
+              <th>Status</th>
+              <th>Option</th>
             </tr>
           </thead>
 
@@ -83,7 +83,7 @@
         </table>
         <span style="float:right">{{$posts->links()}}</span>
         @else
-          <h6 class="text-center">Không có dữ liệu vui lòng tạo mới</h6>
+          <h6 class="text-center">New Data Empty!</h6>
         @endif
       </div>
     </div>
