@@ -64,7 +64,7 @@
                     <p>Copyright ©
                         <script>
                             document.write(new Date().getFullYear());
-                        </script>2023
+                        </script>
                          <i class="fa fa-heart-o"
                         aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">LaravelShop</a>
                     </p>

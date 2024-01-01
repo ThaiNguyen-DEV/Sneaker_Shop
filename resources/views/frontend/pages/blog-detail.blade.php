@@ -59,7 +59,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="blog__details__author">
                                     <div class="blog__details__author__pic">
-                                        <img src="{{asset('frontend/img/blog/details/blog-author.jpg')}}" alt="">
+                                        <img src="{{asset('frontend/img/blog/details/thai.jpg')}}" alt="">
                                     </div>
                                 </div>
                             </div>
